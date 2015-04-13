@@ -45,4 +45,4 @@ Usage
         gus = form.cleaned_data.get('gus')
         company_details = gus.search(form.cleaned_data.get('nip'))
 
-For more information, see `GUS <https://github.com/bogdal/django-gusregon/gusregon/gus.py>`_ api class.
+For more information, see `GUS <https://github.com/bogdal/django-gusregon/blob/master/gusregon/gus.py>`_ api class.
