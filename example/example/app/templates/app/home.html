@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>django-gusregon example</title>
+    </head>
+    <body>
+          <form action="." method="post">
+              {% csrf_token %}
+              {{ form }}
+              <button type="submit">Submit</button>
+          </form>
+
+          {% if info %}
+              <ul>
+                {% for key, value in info.iteritems %}
+                  <li><strong>{{ key }}</strong>: {{ value }}
+                {% endfor %}
+              </ul>
+          {% endif %}
+
+    </body>
+</html>
