@@ -7,23 +7,11 @@ django-gusregon
 Quickstart
 ----------
 
-1. Install the package via ``pip``:
+Install the package via ``pip``:
 
 .. code-block:: bash
 
     pip install django-gusregon
-
-
-2. Add ``gusregon`` to ``INSTALLED_APPS``:
-
-.. code-block:: python
-
-    INSTALLED_APPS = (
-      ...
-      'gusregon',
-      ...
-    )
-
 
 
 Usage
