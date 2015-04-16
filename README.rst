@@ -45,4 +45,20 @@ Usage
         gus = form.cleaned_data.get('gus')
         company_details = gus.search(form.cleaned_data.get('nip'))
 
+
+API
+
+.. code-block:: python
+
+    from gusregon.gus import GUS
+    
+    gus = GUS()
+    sid = gus.login()
+    gus.get_captcha()
+    
+    gus = GUS(sid)
+    gus.check_captcha('<captcha_code>')
+    gus.search(nip='..')
+
+
 For more information, see `GUS <https://github.com/bogdal/django-gusregon/blob/master/gusregon/gus.py>`_ api class.
