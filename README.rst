@@ -42,11 +42,12 @@ API
     
     gus = GUS()
     sid = gus.login()
-    gus.get_captcha()
+    captcha = gus.get_captcha()
+    '<img src="data:image/jpg;base64,%s" alt="captcha" />' % captcha
     
     gus = GUS(sid)
-    gus.check_captcha('<captcha_code>')
-    gus.search(nip='..')
+    if gus.check_captcha('<captcha_code>'):
+        gus.search(nip='..')
 
 
 For more information, see `GUS <https://github.com/bogdal/django-gusregon/blob/master/gusregon/gus.py>`_ api class.
