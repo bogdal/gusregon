@@ -3,10 +3,7 @@ import json
 
 
 GUS_API_URL = 'https://wyszukiwarkaregon.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc/ajaxEndpoint/'
-
 LOGIN_ENDPOINT = 'Zaloguj'
-CAPTCHA_ENDPOINT = 'PobierzCaptcha'
-CHECK_CAPTCHA_ENDPOINT = 'SprawdzCaptcha'
 SEARCH_ENDPOINT = 'daneSzukaj'
 COMPANY_DETAILS_ENDPOINT = 'DanePobierzPelnyRaport'
 
@@ -25,19 +22,13 @@ class GUS(object):
 
     def __init__(self, sid=None):
         self.sid = sid
+        if self.sid is None:
+            self.login()
 
     def login(self):
-        data = {'pKluczUzytkownika': 'aaaaaabbbbbcccccdddd'}
+        data = {'pKluczUzytkownika': 'aaaaaabbbbbcccccddd_'}
         self.sid = self._post(LOGIN_ENDPOINT, data=json.dumps(data))
         return self.sid
-
-    def get_captcha(self):
-        return self._post(CAPTCHA_ENDPOINT)
-
-    def check_captcha(self, captcha):
-        data = {'pCaptcha': captcha}
-        return self._post(
-            CHECK_CAPTCHA_ENDPOINT, data=json.dumps(data))
 
     def search(self, nip=None, regon=None, krs=None,
                detailed=True, no_prefix=True):
