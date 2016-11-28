@@ -1,8 +1,4 @@
-*.log
-*.pot
-*.pyc
-*.sqlite3
-.idea
-*~
-dist
+.*
 *.egg-info
+*.pyc
+__pycache__
