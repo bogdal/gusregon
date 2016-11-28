@@ -1,0 +1,143 @@
+interactions:
+- request:
+    body: !!python/unicode <?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope
+      xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope" xmlns:wsa="http://www.w3.org/2005/08/addressing"
+      xmlns:ns2="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:ns0="http://CIS/BIR/PUBL/2014/07" xmlns:ns1="http://CIS/BIR/PUBL/2014/07/DataContract"><SOAP-ENV:Header><wsa:To>https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc</wsa:To><wsa:Action>http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj</wsa:Action></SOAP-ENV:Header><ns2:Body><ns0:DaneSzukaj><ns0:pParametryWyszukiwania><ns1:Nip>5170359458</ns1:Nip></ns0:pParametryWyszukiwania></ns0:DaneSzukaj></ns2:Body></SOAP-ENV:Envelope>
+    headers:
+      Connection: [close]
+      Content-Length: ['725']
+      Content-Type: [application/soap+xml; charset=utf-8]
+      Host: [wyszukiwarkaregontest.stat.gov.pl]
+      Sid:
+      - !!python/object/new:suds.sax.text.Text
+        args: [!!python/unicode dpw24597775798kebm8t]
+        state: {escaped: false, lang: null}
+      Soapaction: ['"http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj"']
+      User-Agent: [Python-urllib/2.7]
+    method: POST
+    uri: https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
+  response:
+    body: {string: "\r\n--uuid:66ac9201-4182-497f-b6a1-37ea3398d21a+id=4572\r\nContent-ID:
+        <http://tempuri.org/0>\r\nContent-Transfer-Encoding: 8bit\r\nContent-Type:
+        application/xop+xml;charset=utf-8;type=\"application/soap+xml\"\r\n\r\n<s:Envelope
+        xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"><s:Header><a:Action
+        s:mustUnderstand=\"1\">http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukajResponse</a:Action></s:Header><s:Body><DaneSzukajResponse
+        xmlns=\"http://CIS/BIR/PUBL/2014/07\"><DaneSzukajResult>&lt;root&gt;&#xD;\n
+        \ &lt;dane&gt;&#xD;\n    &lt;Regon&gt;18085317700000&lt;/Regon&gt;&#xD;\n
+        \   &lt;RegonLink&gt;&amp;lt;a href='javascript:danePobierzPelnyRaport(\"18085317700000\",\"DaneRaportPrawnaPubl\",
+        0);'&amp;gt;180853177&amp;lt;/a&amp;gt;&lt;/RegonLink&gt;&#xD;\n    &lt;Nazwa&gt;ASSECO
+        SYSTEMS SP\xD3\u0141KA AKCYJNA&lt;/Nazwa&gt;&#xD;\n    &lt;Wojewodztwo&gt;PODKARPACKIE&lt;/Wojewodztwo&gt;&#xD;\n
+        \   &lt;Powiat&gt;m. Rzesz\xF3w&lt;/Powiat&gt;&#xD;\n    &lt;Gmina&gt;M. Rzesz\xF3w&lt;/Gmina&gt;&#xD;\n
+        \   &lt;Miejscowosc&gt;Rzesz\xF3w&lt;/Miejscowosc&gt;&#xD;\n    &lt;KodPocztowy&gt;35-322&lt;/KodPocztowy&gt;&#xD;\n
+        \   &lt;Ulica&gt;ul. Test-Krucza&lt;/Ulica&gt;&#xD;\n    &lt;Typ&gt;P&lt;/Typ&gt;&#xD;\n
+        \   &lt;SilosID&gt;6&lt;/SilosID&gt;&#xD;\n  &lt;/dane&gt;&#xD;\n&lt;/root&gt;</DaneSzukajResult></DaneSzukajResponse></s:Body></s:Envelope>\r\n--uuid:66ac9201-4182-497f-b6a1-37ea3398d21a+id=4572--\r\n"}
+    headers:
+      cache-control: [private]
+      connection: [close]
+      content-length: ['1406']
+      content-type: ['multipart/related; type="application/xop+xml";start="<http://tempuri.org/0>";boundary="uuid:66ac9201-4182-497f-b6a1-37ea3398d21a+id=4572";start-info="application/soap+xml"']
+      date: ['Mon, 28 Nov 2016 18:36:57 GMT']
+      mime-version: ['1.0']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [2.0.50727]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode <?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsa="http://www.w3.org/2005/08/addressing"
+      xmlns:ns1="http://www.w3.org/2003/05/soap-envelope" xmlns:ns0="http://CIS/BIR/PUBL/2014/07"
+      xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"><SOAP-ENV:Header><wsa:To>https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc</wsa:To><wsa:Action>http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport</wsa:Action></SOAP-ENV:Header><ns1:Body><ns0:DanePobierzPelnyRaport><ns0:pRegon>18085317700000</ns0:pRegon><ns0:pNazwaRaportu>PublDaneRaportPrawna</ns0:pNazwaRaportu></ns0:DanePobierzPelnyRaport></ns1:Body></SOAP-ENV:Envelope>
+    headers:
+      Connection: [close]
+      Content-Length: ['720']
+      Content-Type: [application/soap+xml; charset=utf-8]
+      Host: [wyszukiwarkaregontest.stat.gov.pl]
+      Sid:
+      - !!python/object/new:suds.sax.text.Text
+        args: [!!python/unicode dpw24597775798kebm8t]
+        state: {escaped: false, lang: null}
+      Soapaction: ['"http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport"']
+      User-Agent: [Python-urllib/2.7]
+    method: POST
+    uri: https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
+  response:
+    body: {string: "\r\n--uuid:66ac9201-4182-497f-b6a1-37ea3398d21a+id=4573\r\nContent-ID:
+        <http://tempuri.org/0>\r\nContent-Transfer-Encoding: 8bit\r\nContent-Type:
+        application/xop+xml;charset=utf-8;type=\"application/soap+xml\"\r\n\r\n<s:Envelope
+        xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"><s:Header><a:Action
+        s:mustUnderstand=\"1\">http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaportResponse</a:Action></s:Header><s:Body><DanePobierzPelnyRaportResponse
+        xmlns=\"http://CIS/BIR/PUBL/2014/07\"><DanePobierzPelnyRaportResult>&lt;root&gt;&#xD;\n
+        \ &lt;dane&gt;&#xD;\n    &lt;praw_regon14&gt;18085317700000&lt;/praw_regon14&gt;&#xD;\n
+        \   &lt;praw_nip&gt;5170359458&lt;/praw_nip&gt;&#xD;\n    &lt;praw_nazwa&gt;ASSECO
+        SYSTEMS SP\xD3\u0141KA AKCYJNA&lt;/praw_nazwa&gt;&#xD;\n    &lt;praw_nazwaSkrocona
+        /&gt;&#xD;\n    &lt;praw_numerWrejestrzeEwidencji&gt;0000421310&lt;/praw_numerWrejestrzeEwidencji&gt;&#xD;\n
+        \   &lt;praw_dataPowstania&gt;2012-05-21&lt;/praw_dataPowstania&gt;&#xD;\n
+        \   &lt;praw_dataRozpoczeciaDzialalnosci&gt;2012-05-21&lt;/praw_dataRozpoczeciaDzialalnosci&gt;&#xD;\n
+        \   &lt;praw_dataWpisuDoREGON&gt;2012-06-01&lt;/praw_dataWpisuDoREGON&gt;&#xD;\n
+        \   &lt;praw_dataZawieszeniaDzialalnosci /&gt;&#xD;\n    &lt;praw_dataWznowieniaDzialalnosci
+        /&gt;&#xD;\n    &lt;praw_dataZaistnieniaZmiany&gt;2012-06-01&lt;/praw_dataZaistnieniaZmiany&gt;&#xD;\n
+        \   &lt;praw_dataZakonczeniaDzialalnosci /&gt;&#xD;\n    &lt;praw_dataSkresleniazRegon
+        /&gt;&#xD;\n    &lt;praw_adSiedzKraj_Symbol&gt;PL&lt;/praw_adSiedzKraj_Symbol&gt;&#xD;\n
+        \   &lt;praw_adSiedzWojewodztwo_Symbol&gt;18&lt;/praw_adSiedzWojewodztwo_Symbol&gt;&#xD;\n
+        \   &lt;praw_adSiedzPowiat_Symbol&gt;63&lt;/praw_adSiedzPowiat_Symbol&gt;&#xD;\n
+        \   &lt;praw_adSiedzGmina_Symbol&gt;011&lt;/praw_adSiedzGmina_Symbol&gt;&#xD;\n
+        \   &lt;praw_adSiedzKodPocztowy&gt;35322&lt;/praw_adSiedzKodPocztowy&gt;&#xD;\n
+        \   &lt;praw_adSiedzMiejscowoscPoczty_Symbol&gt;0974133&lt;/praw_adSiedzMiejscowoscPoczty_Symbol&gt;&#xD;\n
+        \   &lt;praw_adSiedzMiejscowosc_Symbol&gt;0974133&lt;/praw_adSiedzMiejscowosc_Symbol&gt;&#xD;\n
+        \   &lt;praw_adSiedzUlica_Symbol&gt;10013&lt;/praw_adSiedzUlica_Symbol&gt;&#xD;\n
+        \   &lt;praw_adSiedzNumerNieruchomosci&gt;14        &lt;/praw_adSiedzNumerNieruchomosci&gt;&#xD;\n
+        \   &lt;praw_adSiedzNumerLokalu /&gt;&#xD;\n    &lt;praw_adSiedzNietypoweMiejsceLokalizacji
+        /&gt;&#xD;\n    &lt;praw_numerTelefonu /&gt;&#xD;\n    &lt;praw_numerWewnetrznyTelefonu
+        /&gt;&#xD;\n    &lt;praw_numerFaksu /&gt;&#xD;\n    &lt;praw_adresEmail /&gt;&#xD;\n
+        \   &lt;praw_adresStronyinternetowej /&gt;&#xD;\n    &lt;praw_adresEmail2
+        /&gt;&#xD;\n    &lt;praw_adKorKraj_Symbol&gt;PL&lt;/praw_adKorKraj_Symbol&gt;&#xD;\n
+        \   &lt;praw_adKorWojewodztwo_Symbol&gt;18&lt;/praw_adKorWojewodztwo_Symbol&gt;&#xD;\n
+        \   &lt;praw_adKorPowiat_Symbol&gt;63&lt;/praw_adKorPowiat_Symbol&gt;&#xD;\n
+        \   &lt;praw_adKorGmina_Symbol&gt;011&lt;/praw_adKorGmina_Symbol&gt;&#xD;\n
+        \   &lt;praw_adKorKodPocztowy&gt;35322&lt;/praw_adKorKodPocztowy&gt;&#xD;\n
+        \   &lt;praw_adKorMiejscowoscPoczty_Symbol&gt;0974133&lt;/praw_adKorMiejscowoscPoczty_Symbol&gt;&#xD;\n
+        \   &lt;praw_adKorMiejscowosc_Symbol&gt;0974133&lt;/praw_adKorMiejscowosc_Symbol&gt;&#xD;\n
+        \   &lt;praw_adKorUlica_Symbol&gt;14945&lt;/praw_adKorUlica_Symbol&gt;&#xD;\n
+        \   &lt;praw_adKorNumerNieruchomosci&gt;14        &lt;/praw_adKorNumerNieruchomosci&gt;&#xD;\n
+        \   &lt;praw_adKorNumerLokalu /&gt;&#xD;\n    &lt;praw_adKorNietypoweMiejsceLokalizacji
+        /&gt;&#xD;\n    &lt;praw_adKorNazwaPodmiotuDoKorespondencji /&gt;&#xD;\n    &lt;praw_adSiedzKraj_Nazwa&gt;POLSKA&lt;/praw_adSiedzKraj_Nazwa&gt;&#xD;\n
+        \   &lt;praw_adSiedzWojewodztwo_Nazwa&gt;PODKARPACKIE&lt;/praw_adSiedzWojewodztwo_Nazwa&gt;&#xD;\n
+        \   &lt;praw_adSiedzPowiat_Nazwa&gt;m. Rzesz\xF3w&lt;/praw_adSiedzPowiat_Nazwa&gt;&#xD;\n
+        \   &lt;praw_adSiedzGmina_Nazwa&gt;M. Rzesz\xF3w&lt;/praw_adSiedzGmina_Nazwa&gt;&#xD;\n
+        \   &lt;praw_adSiedzMiejscowosc_Nazwa&gt;Rzesz\xF3w&lt;/praw_adSiedzMiejscowosc_Nazwa&gt;&#xD;\n
+        \   &lt;praw_adSiedzMiejscowoscPoczty_Nazwa&gt;Rzesz\xF3w&lt;/praw_adSiedzMiejscowoscPoczty_Nazwa&gt;&#xD;\n
+        \   &lt;praw_adSiedzUlica_Nazwa&gt;ul. Test-Krucza&lt;/praw_adSiedzUlica_Nazwa&gt;&#xD;\n
+        \   &lt;praw_adKorKraj_Nazwa /&gt;&#xD;\n    &lt;praw_adKorWojewodztwo_Nazwa
+        /&gt;&#xD;\n    &lt;praw_adKorPowiat_Nazwa /&gt;&#xD;\n    &lt;praw_adKorGmina_Nazwa
+        /&gt;&#xD;\n    &lt;praw_adKorMiejscowosc_Nazwa /&gt;&#xD;\n    &lt;praw_adKorMiejscowoscPoczty_Nazwa
+        /&gt;&#xD;\n    &lt;praw_adKorUlica_Nazwa /&gt;&#xD;\n    &lt;praw_podstawowaFormaPrawna_Symbol&gt;1&lt;/praw_podstawowaFormaPrawna_Symbol&gt;&#xD;\n
+        \   &lt;praw_szczegolnaFormaPrawna_Symbol&gt;16&lt;/praw_szczegolnaFormaPrawna_Symbol&gt;&#xD;\n
+        \   &lt;praw_formaFinansowania_Symbol&gt;1&lt;/praw_formaFinansowania_Symbol&gt;&#xD;\n
+        \   &lt;praw_formaWlasnosci_Symbol&gt;215&lt;/praw_formaWlasnosci_Symbol&gt;&#xD;\n
+        \   &lt;praw_organZalozycielski_Symbol /&gt;&#xD;\n    &lt;praw_organRejestrowy_Symbol&gt;071690010&lt;/praw_organRejestrowy_Symbol&gt;&#xD;\n
+        \   &lt;praw_rodzajRejestruEwidencji_Symbol&gt;138&lt;/praw_rodzajRejestruEwidencji_Symbol&gt;&#xD;\n
+        \   &lt;praw_podstawowaFormaPrawna_Nazwa&gt;OSOBA PRAWNA&lt;/praw_podstawowaFormaPrawna_Nazwa&gt;&#xD;\n
+        \   &lt;praw_szczegolnaFormaPrawna_Nazwa&gt;SP\xD3\u0141KI AKCYJNE&lt;/praw_szczegolnaFormaPrawna_Nazwa&gt;&#xD;\n
+        \   &lt;praw_formaFinansowania_Nazwa&gt;JEDNOSTKA SAMOFINANSUJ\u0104CA NIE
+        B\u0118D\u0104CA JEDNOSTK\u0104 BUD\u017BETOW\u0104 LUB SAMORZ\u0104DOWYM
+        ZAK\u0141ADEM BUD\u017BETOWYM&lt;/praw_formaFinansowania_Nazwa&gt;&#xD;\n
+        \   &lt;praw_formaWlasnosci_Nazwa&gt;W\u0141ASNO\u015A\u0106 PRYWATNA KRAJOWA
+        POZOSTA\u0141A&lt;/praw_formaWlasnosci_Nazwa&gt;&#xD;\n    &lt;praw_organZalozycielski_Nazwa
+        /&gt;&#xD;\n    &lt;praw_organRejestrowy_Nazwa&gt;S\u0104D REJONOWY W RZESZOWIE,
+        XII WYDZIA\u0141 GOSPODARCZY KRAJOWEGO REJESTRU S\u0104DOWEGO&lt;/praw_organRejestrowy_Nazwa&gt;&#xD;\n
+        \   &lt;praw_rodzajRejestruEwidencji_Nazwa&gt;REJESTR PRZEDSI\u0118BIORC\xD3W&lt;/praw_rodzajRejestruEwidencji_Nazwa&gt;&#xD;\n
+        \   &lt;praw_jednostekLokalnych&gt;0&lt;/praw_jednostekLokalnych&gt;&#xD;\n
+        \ &lt;/dane&gt;&#xD;\n&lt;/root&gt;</DanePobierzPelnyRaportResult></DanePobierzPelnyRaportResponse></s:Body></s:Envelope>\r\n--uuid:66ac9201-4182-497f-b6a1-37ea3398d21a+id=4573--\r\n"}
+    headers:
+      cache-control: [private]
+      connection: [close]
+      content-length: ['6110']
+      content-type: ['multipart/related; type="application/xop+xml";start="<http://tempuri.org/0>";boundary="uuid:66ac9201-4182-497f-b6a1-37ea3398d21a+id=4573";start-info="application/soap+xml"']
+      date: ['Mon, 28 Nov 2016 18:36:58 GMT']
+      mime-version: ['1.0']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [2.0.50727]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+version: 1
