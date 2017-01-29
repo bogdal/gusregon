@@ -22,7 +22,7 @@ class GUS(object):
         self.sandbox = sandbox
         self.sid = None
         if sandbox:
-            self.api_key = 'abcde12345abcde12345'
+            self.api_key = api_key or 'abcde12345abcde12345'
             self.location = 'https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc'
         self.client = Client(
             self.wsdl, location=self.location, headers=self.headers, plugins=[MultipartFilter()])
