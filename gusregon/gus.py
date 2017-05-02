@@ -1,16 +1,15 @@
 from bs4 import BeautifulSoup, Tag
-from suds.bindings import binding
-from suds.client import Client
-from suds.plugin import MessagePlugin
-from suds.sax.element import Element
+from requests import Session
+from zeep import Client, Transport
 
-binding.envns = ('SOAP-ENV', 'http://www.w3.org/2003/05/soap-envelope')
+WSDL = 'https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/wsdl/UslugaBIRzewnPubl.xsd'
+ENDPOINT = 'https://wyszukiwarkaregon.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc'
+ENDPOINT_SANDBOX = 'https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc'
 
 
 class GUS(object):
-    wsdl = 'https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/wsdl/UslugaBIRzewnPubl.xsd'
-    location = 'https://wyszukiwarkaregon.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc'
-    headers = {'Content-Type': 'application/soap+xml; charset=utf-8'}
+    endpoint = ENDPOINT
+    headers = {'User-Agent': 'gusregon'}
     report_type = {
         'F': 'PublDaneRaportDzialalnoscFizycznejCeidg',
         'P': 'PublDaneRaportPrawna'}
@@ -20,28 +19,19 @@ class GUS(object):
             raise AttributeError('Api key is required.')
         self.api_key = api_key
         self.sandbox = sandbox
-        self.sid = None
         if sandbox:
             self.api_key = api_key or 'abcde12345abcde12345'
-            self.location = 'https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc'
-        self.client = Client(
-            self.wsdl, location=self.location, headers=self.headers, plugins=[MultipartFilter()])
-        self._login()
+            self.endpoint = ENDPOINT_SANDBOX
+        session = Session()
+        session.headers = self.headers
+        client = Client(WSDL, transport=Transport(session=session))
+        self.headers.update({'sid': client.service.Zaloguj(self.api_key)})
+        client.transport.session.headers = self.headers
+        self.service = client.create_service('{http://tempuri.org/}e3', self.endpoint)
 
     def _service(self, action, *args, **kwargs):
-        wsans = ('wsa', "http://www.w3.org/2005/08/addressing")
-        action_text = 'http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/%s' % (action,)
-        self.client.set_options(soapheaders=[
-            Element('To', ns=wsans).setText(self.location),
-            Element('Action', ns=wsans).setText(action_text)])
-        if self.sid:
-            self.headers.update({'sid': self.sid})
-            self.client.set_options(headers=self.headers)
-        service = getattr(self.client.service, action)
+        service = getattr(self.service, action)
         return service(*args, **kwargs)
-
-    def _login(self):
-        self.sid = self._service('Zaloguj', self.api_key)
 
     def _remove_prefix(self, data):
         data = {item.name: item.get_text()
@@ -82,11 +72,3 @@ class GUS(object):
                 'street_address': address,
                 'postal_code': '%s-%s' % (postal_code[:2], postal_code[2:]),
                 'city': details['adsiedzmiejscowosc_nazwa']}
-
-
-class MultipartFilter(MessagePlugin):
-    def received(self, context):
-        ending_tag = b'</s:Envelope>'
-        start = context.reply.find(b'<s:Envelope')
-        end = context.reply.find(ending_tag) + len(ending_tag)
-        context.reply = context.reply[start:end]

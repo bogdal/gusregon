@@ -27,7 +27,7 @@ class PyTest(TestCommand):
 
 setup(
     name='gusregon',
-    version='1.0.0',
+    version='1.1.0',
     description='GUS REGON Internet Database Client',
     long_description=open('README.rst').read(),
     author='Adam Bogdał',
@@ -49,7 +49,7 @@ setup(
     install_requires=[
         'beautifulsoup4>=4.5.1',
         'lxml>=3.6.4',
-        'suds-jurko>=0.6'
+        'zeep>=1.6.0'
     ],
     cmdclass={
         'test': PyTest
