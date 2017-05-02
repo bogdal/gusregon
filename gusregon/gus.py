@@ -25,9 +25,9 @@ class GUS(object):
         session = Session()
         session.headers = self.headers
         client = Client(WSDL, transport=Transport(session=session))
-        self.headers.update({'sid': client.service.Zaloguj(self.api_key)})
-        client.transport.session.headers = self.headers
         self.service = client.create_service('{http://tempuri.org/}e3', self.endpoint)
+        self.headers.update({'sid': self._service('Zaloguj', self.api_key)})
+        client.transport.session.headers = self.headers
 
     def _service(self, action, *args, **kwargs):
         service = getattr(self.service, action)
