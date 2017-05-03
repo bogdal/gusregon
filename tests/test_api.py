@@ -4,6 +4,7 @@ import os
 
 import pytest
 from gusregon import GUS
+from gusregon.gus import ENDPOINT, ENDPOINT_SANDBOX
 from vcr import VCR
 
 
@@ -21,10 +22,12 @@ def test_required_api_key():
         GUS()
 
 
-@vcr.use_cassette
-def test_get_sid():
+def test_different_endpoints():
     gus = GUS(sandbox=True)
-    assert gus.sid is not None
+    assert gus.service._binding_options.get('address') == ENDPOINT_SANDBOX
+
+    gus = GUS(api_key='my_api_key')
+    assert gus.service._binding_options.get('address') == ENDPOINT
 
 
 @pytest.mark.parametrize('kwargs', [{'nip': '5170359458'}, {'regon': '180853177'}])
