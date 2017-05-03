@@ -32,8 +32,34 @@ Usage
     from gusregon import GUS
 
     gus = GUS(api_key='my_api_key')
-    gus.search(nip='..')
-
+    gus.get_address(nip='1112223344')
+    
+    {
+        'name': 'REGON SYSTEMS SPÓŁKA AKCYJNA',
+        'street_address': 'ul. Tęczowa 14',
+        'postal_code': '35-322',
+        'city': 'Rzeszów'
+    }
+    
+    # returns all data from BIR1 service
+    gus.search(nip='1112223344')
+    
+    {
+        'adsiedzkraj_symbol': 'PL',
+        'datazawieszeniadzialalnosci': '',
+        'jednosteklokalnych': '0',
+        'rodzajrejestruewidencji_symbol': '138',
+        'adkorulica_nazwa': '',
+        ...
+        'adkorpowiat_symbol': '63',
+        'datawpisudoregon': '2012-06-01',
+        'rodzajrejestruewidencji_nazwa': 'REJESTR PRZEDSIĘBIORCÓW',
+        'adsiedznumernieruchomosci': '14',
+        'adkorkodpocztowy': '35322',
+        'adsiedzkraj_nazwa': 'POLSKA',
+        'adsiedzulica_symbol': '10013',
+        'adsiedzkodpocztowy': '35322',
+    }
 
 Sandbox mode for testing:
 
@@ -42,4 +68,4 @@ Sandbox mode for testing:
     from gusregon import GUS
 
     gus = GUS(sandbox=True)
-    gus.search(nip='..')
+    gus.get_address(nip='1112223344')
