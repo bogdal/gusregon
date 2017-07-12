@@ -12,7 +12,9 @@ class GUS(object):
     headers = {'User-Agent': 'gusregon'}
     report_type = {
         'F': 'PublDaneRaportDzialalnoscFizycznejCeidg',
-        'P': 'PublDaneRaportPrawna'}
+        'P': 'PublDaneRaportPrawna'
+        'LP': 'PublDaneRaportLokalnaPrawnej',
+        'LF': 'PublDaneRaportLokalnaFizycznej'}
 
     def __init__(self, api_key=None, sandbox=False):
         if not any([api_key, sandbox]):
