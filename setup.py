@@ -27,7 +27,7 @@ class PyTest(TestCommand):
 
 setup(
     name='gusregon',
-    version='1.1.0',
+    version='1.1.1',
     description='GUS REGON Internet Database Client',
     long_description=open('README.rst').read(),
     author='Adam Bogdał',
