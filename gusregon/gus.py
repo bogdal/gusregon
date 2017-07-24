@@ -11,8 +11,13 @@ class GUS(object):
     endpoint = ENDPOINT
     headers = {'User-Agent': 'gusregon'}
     report_type = {
-        'F': 'PublDaneRaportDzialalnoscFizycznejCeidg',
-        'P': 'PublDaneRaportPrawna'}
+        'F': {
+            '1': 'PublDaneRaportDzialalnoscFizycznejCeidg',
+            '2': 'PublDaneRaportDzialalnoscFizycznejRolnicza',
+            '3': 'PublDaneRaportDzialalnoscFizycznejPozostala'},
+        'LF': 'PublDaneRaportLokalnaFizycznej',
+        'P': 'PublDaneRaportPrawna',
+        'LP': 'PublDaneRaportLokalnaPrawnej'}
 
     def __init__(self, api_key=None, sandbox=False):
         if not any([api_key, sandbox]):
@@ -56,6 +61,8 @@ class GUS(object):
         if details is not None:
             data = BeautifulSoup(details, 'lxml')
             report_type = self.report_type.get(data.typ.get_text())
+            if isinstance(report_type, dict):
+                report_type = report_type.get(data.silosid.get_text())
             return self._remove_prefix(self._service(
                 'DanePobierzPelnyRaport', data.regon.get_text(), report_type))
 

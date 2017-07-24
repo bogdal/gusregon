@@ -1,0 +1,114 @@
+interactions:
+- request:
+    body: !!python/unicode "<?xml version='1.0' encoding='utf-8'?>\n<soap-env:Envelope
+      xmlns:soap-env=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap-env:Header
+      xmlns:wsa=\"http://www.w3.org/2005/08/addressing\">\n    <wsa:Action>http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj</wsa:Action>\n
+      \   <wsa:MessageID>urn:uuid:057d20a8-7fb0-4280-b89a-f512a59f801a</wsa:MessageID>\n
+      \   <wsa:To>https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc</wsa:To>\n
+      \ </soap-env:Header>\n  <soap-env:Body>\n    <ns0:DaneSzukaj xmlns:ns0=\"http://CIS/BIR/PUBL/2014/07\">\n
+      \     <ns0:pParametryWyszukiwania>\n        <ns1:Regon xmlns:ns1=\"http://CIS/BIR/PUBL/2014/07/DataContract\">01034470800689</ns1:Regon>\n
+      \     </ns0:pParametryWyszukiwania>\n    </ns0:DaneSzukaj>\n  </soap-env:Body>\n</soap-env:Envelope>\n"
+    headers:
+      Content-Length: ['776']
+      Content-Type: ['application/soap+xml; charset=utf-8; action="http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj"']
+      SOAPAction: ['"http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj"']
+      User-Agent: [Zeep/1.6.0 (www.python-zeep.org)]
+      sid: [558t48e85f8555wmr52v]
+    method: POST
+    uri: https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
+  response:
+    body: {string: "\r\n--uuid:3e2fc6a1-25ce-4dcc-9875-3bb93963280a+id=7454\r\nContent-ID:
+        <http://tempuri.org/0>\r\nContent-Transfer-Encoding: 8bit\r\nContent-Type:
+        application/xop+xml;charset=utf-8;type=\"application/soap+xml\"\r\n\r\n<s:Envelope
+        xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"><s:Header><a:Action
+        s:mustUnderstand=\"1\">http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukajResponse</a:Action><a:RelatesTo>urn:uuid:057d20a8-7fb0-4280-b89a-f512a59f801a</a:RelatesTo></s:Header><s:Body><DaneSzukajResponse
+        xmlns=\"http://CIS/BIR/PUBL/2014/07\"><DaneSzukajResult>&lt;root&gt;&#xD;\n
+        \ &lt;dane&gt;&#xD;\n    &lt;Regon&gt;01034470800689&lt;/Regon&gt;&#xD;\n
+        \   &lt;RegonLink&gt;&amp;lt;a href='javascript:danePobierzPelnyRaport(\"01034470800689\",\"DaneRaportLokalnaPrawnejPubl\",
+        0);'&amp;gt;01034470800689&amp;lt;/a&amp;gt;&lt;/RegonLink&gt;&#xD;\n    &lt;Nazwa&gt;AGENCJA
+        NIERUCHOMO\u015ACI ROLNYCH ODDZIA\u0141 TERENOWY W RZESZOWIE&lt;/Nazwa&gt;&#xD;\n
+        \   &lt;Wojewodztwo&gt;PODKARPACKIE&lt;/Wojewodztwo&gt;&#xD;\n    &lt;Powiat&gt;m.
+        Rzesz\xF3w&lt;/Powiat&gt;&#xD;\n    &lt;Gmina&gt;M. Rzesz\xF3w&lt;/Gmina&gt;&#xD;\n
+        \   &lt;Miejscowosc&gt;Rzesz\xF3w&lt;/Miejscowosc&gt;&#xD;\n    &lt;KodPocztowy&gt;35-001&lt;/KodPocztowy&gt;&#xD;\n
+        \   &lt;Ulica&gt;ul. Test-Wilcza&lt;/Ulica&gt;&#xD;\n    &lt;Typ&gt;LP&lt;/Typ&gt;&#xD;\n
+        \   &lt;SilosID&gt;6&lt;/SilosID&gt;&#xD;\n  &lt;/dane&gt;&#xD;\n&lt;/root&gt;</DaneSzukajResult></DaneSzukajResponse></s:Body></s:Envelope>\r\n--uuid:3e2fc6a1-25ce-4dcc-9875-3bb93963280a+id=7454--\r\n"}
+    headers:
+      cache-control: [private]
+      connection: [Keep-Alive]
+      content-length: ['1521']
+      content-type: ['multipart/related; type="application/xop+xml";start="<http://tempuri.org/0>";boundary="uuid:3e2fc6a1-25ce-4dcc-9875-3bb93963280a+id=7454";start-info="application/soap+xml"']
+      date: ['Fri, 14 Jul 2017 16:51:34 GMT']
+      mime-version: ['1.0']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [2.0.50727]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode "<?xml version='1.0' encoding='utf-8'?>\n<soap-env:Envelope
+      xmlns:soap-env=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap-env:Header
+      xmlns:wsa=\"http://www.w3.org/2005/08/addressing\">\n    <wsa:Action>http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport</wsa:Action>\n
+      \   <wsa:MessageID>urn:uuid:9010b021-e0d3-4a65-80eb-8568f7af1113</wsa:MessageID>\n
+      \   <wsa:To>https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc</wsa:To>\n
+      \ </soap-env:Header>\n  <soap-env:Body>\n    <ns0:DanePobierzPelnyRaport xmlns:ns0=\"http://CIS/BIR/PUBL/2014/07\">\n
+      \     <ns0:pRegon>01034470800689</ns0:pRegon>\n      <ns0:pNazwaRaportu>PublDaneRaportLokalnaPrawnej</ns0:pNazwaRaportu>\n
+      \   </ns0:DanePobierzPelnyRaport>\n  </soap-env:Body>\n</soap-env:Envelope>\n"
+    headers:
+      Content-Length: ['762']
+      Content-Type: ['application/soap+xml; charset=utf-8; action="http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport"']
+      SOAPAction: ['"http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport"']
+      User-Agent: [Zeep/1.6.0 (www.python-zeep.org)]
+      sid: [558t48e85f8555wmr52v]
+    method: POST
+    uri: https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
+  response:
+    body: {string: "\r\n--uuid:3e2fc6a1-25ce-4dcc-9875-3bb93963280a+id=7455\r\nContent-ID:
+        <http://tempuri.org/0>\r\nContent-Transfer-Encoding: 8bit\r\nContent-Type:
+        application/xop+xml;charset=utf-8;type=\"application/soap+xml\"\r\n\r\n<s:Envelope
+        xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"><s:Header><a:Action
+        s:mustUnderstand=\"1\">http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaportResponse</a:Action><a:RelatesTo>urn:uuid:9010b021-e0d3-4a65-80eb-8568f7af1113</a:RelatesTo></s:Header><s:Body><DanePobierzPelnyRaportResponse
+        xmlns=\"http://CIS/BIR/PUBL/2014/07\"><DanePobierzPelnyRaportResult>&lt;root&gt;&#xD;\n
+        \ &lt;dane&gt;&#xD;\n    &lt;lokpraw_regon14&gt;01034470800689&lt;/lokpraw_regon14&gt;&#xD;\n
+        \   &lt;lokpraw_nip /&gt;&#xD;\n    &lt;lokpraw_nazwa&gt;AGENCJA NIERUCHOMO\u015ACI
+        ROLNYCH ODDZIA\u0141 TERENOWY W RZESZOWIE&lt;/lokpraw_nazwa&gt;&#xD;\n    &lt;lokpraw_numerWrejestrzeEwidencji
+        /&gt;&#xD;\n    &lt;lokpraw_dataWpisuDoRejestruEwidencji&gt;1992-04-01&lt;/lokpraw_dataWpisuDoRejestruEwidencji&gt;&#xD;\n
+        \   &lt;lokpraw_dataPowstania&gt;1992-04-01&lt;/lokpraw_dataPowstania&gt;&#xD;\n
+        \   &lt;lokpraw_dataRozpoczeciaDzialalnosci&gt;1992-04-01&lt;/lokpraw_dataRozpoczeciaDzialalnosci&gt;&#xD;\n
+        \   &lt;lokpraw_dataWpisuDoREGON /&gt;&#xD;\n    &lt;lokpraw_dataZawieszeniaDzialalnosci
+        /&gt;&#xD;\n    &lt;lokpraw_dataWznowieniaDzialalnosci /&gt;&#xD;\n    &lt;lokpraw_dataZaistnieniaZmiany&gt;2014-06-26&lt;/lokpraw_dataZaistnieniaZmiany&gt;&#xD;\n
+        \   &lt;lokpraw_dataZakonczeniaDzialalnosci /&gt;&#xD;\n    &lt;lokpraw_dataSkresleniazRegon
+        /&gt;&#xD;\n    &lt;lokpraw_adSiedzKraj_Symbol&gt;PL&lt;/lokpraw_adSiedzKraj_Symbol&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzWojewodztwo_Symbol&gt;18&lt;/lokpraw_adSiedzWojewodztwo_Symbol&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzPowiat_Symbol&gt;63&lt;/lokpraw_adSiedzPowiat_Symbol&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzGmina_Symbol&gt;011&lt;/lokpraw_adSiedzGmina_Symbol&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzKodPocztowy&gt;35001&lt;/lokpraw_adSiedzKodPocztowy&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzMiejscowoscPoczty_Symbol&gt;0974133&lt;/lokpraw_adSiedzMiejscowoscPoczty_Symbol&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzMiejscowosc_Symbol&gt;0974133&lt;/lokpraw_adSiedzMiejscowosc_Symbol&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzUlica_Symbol&gt;24261&lt;/lokpraw_adSiedzUlica_Symbol&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzNumerNieruchomosci&gt;7&lt;/lokpraw_adSiedzNumerNieruchomosci&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzNumerLokalu /&gt;&#xD;\n    &lt;lokpraw_adSiedzNietypoweMiejsceLokalizacji
+        /&gt;&#xD;\n    &lt;lokpraw_adSiedzKraj_Nazwa&gt;POLSKA&lt;/lokpraw_adSiedzKraj_Nazwa&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzWojewodztwo_Nazwa&gt;PODKARPACKIE&lt;/lokpraw_adSiedzWojewodztwo_Nazwa&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzPowiat_Nazwa&gt;m. Rzesz\xF3w&lt;/lokpraw_adSiedzPowiat_Nazwa&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzGmina_Nazwa&gt;M. Rzesz\xF3w&lt;/lokpraw_adSiedzGmina_Nazwa&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzMiejscowosc_Nazwa&gt;Rzesz\xF3w&lt;/lokpraw_adSiedzMiejscowosc_Nazwa&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzMiejscowoscPoczty_Nazwa&gt;Rzesz\xF3w&lt;/lokpraw_adSiedzMiejscowoscPoczty_Nazwa&gt;&#xD;\n
+        \   &lt;lokpraw_adSiedzUlica_Nazwa&gt;ul. Test-Wilcza&lt;/lokpraw_adSiedzUlica_Nazwa&gt;&#xD;\n
+        \   &lt;lokpraw_formaFinansowania_Symbol&gt;0&lt;/lokpraw_formaFinansowania_Symbol&gt;&#xD;\n
+        \   &lt;lokpraw_organRejestrowy_Symbol /&gt;&#xD;\n    &lt;lokpraw_rodzajRejestruEwidencji_Symbol&gt;000&lt;/lokpraw_rodzajRejestruEwidencji_Symbol&gt;&#xD;\n
+        \   &lt;lokpraw_formaFinansowania_Nazwa&gt;JEDNOSTKA LOKALNA NIE BILANSUJ\u0104CA
+        SAMODZIELNIE&lt;/lokpraw_formaFinansowania_Nazwa&gt;&#xD;\n    &lt;lokpraw_organRejestrowy_Nazwa
+        /&gt;&#xD;\n    &lt;lokpraw_rodzajRejestruEwidencji_Nazwa&gt;PODMIOTY UTWORZONE
+        Z MOCY USTAWY&lt;/lokpraw_rodzajRejestruEwidencji_Nazwa&gt;&#xD;\n    &lt;lokpraw_dzialalnosci&gt;1&lt;/lokpraw_dzialalnosci&gt;&#xD;\n
+        \ &lt;/dane&gt;&#xD;\n&lt;/root&gt;</DanePobierzPelnyRaportResult></DanePobierzPelnyRaportResponse></s:Body></s:Envelope>\r\n--uuid:3e2fc6a1-25ce-4dcc-9875-3bb93963280a+id=7455--\r\n"}
+    headers:
+      cache-control: [private]
+      connection: [Keep-Alive]
+      content-length: ['3993']
+      content-type: ['multipart/related; type="application/xop+xml";start="<http://tempuri.org/0>";boundary="uuid:3e2fc6a1-25ce-4dcc-9875-3bb93963280a+id=7455";start-info="application/soap+xml"']
+      date: ['Fri, 14 Jul 2017 16:51:34 GMT']
+      mime-version: ['1.0']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [2.0.50727]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+version: 1

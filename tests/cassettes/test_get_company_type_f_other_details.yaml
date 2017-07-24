@@ -1,0 +1,112 @@
+interactions:
+- request:
+    body: !!python/unicode "<?xml version='1.0' encoding='utf-8'?>\n<soap-env:Envelope
+      xmlns:soap-env=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap-env:Header
+      xmlns:wsa=\"http://www.w3.org/2005/08/addressing\">\n    <wsa:Action>http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj</wsa:Action>\n
+      \   <wsa:MessageID>urn:uuid:96bbccb2-84a6-4e09-a1d8-7a953c860f73</wsa:MessageID>\n
+      \   <wsa:To>https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc</wsa:To>\n
+      \ </soap-env:Header>\n  <soap-env:Body>\n    <ns0:DaneSzukaj xmlns:ns0=\"http://CIS/BIR/PUBL/2014/07\">\n
+      \     <ns0:pParametryWyszukiwania>\n        <ns1:Regon xmlns:ns1=\"http://CIS/BIR/PUBL/2014/07/DataContract\">970442445</ns1:Regon>\n
+      \     </ns0:pParametryWyszukiwania>\n    </ns0:DaneSzukaj>\n  </soap-env:Body>\n</soap-env:Envelope>\n"
+    headers:
+      Content-Length: ['771']
+      Content-Type: ['application/soap+xml; charset=utf-8; action="http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj"']
+      SOAPAction: ['"http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj"']
+      User-Agent: [Zeep/1.6.0 (www.python-zeep.org)]
+      sid: [bz6v992t87959bh83t89]
+    method: POST
+    uri: https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
+  response:
+    body: {string: "\r\n--uuid:3e2fc6a1-25ce-4dcc-9875-3bb93963280a+id=7407\r\nContent-ID:
+        <http://tempuri.org/0>\r\nContent-Transfer-Encoding: 8bit\r\nContent-Type:
+        application/xop+xml;charset=utf-8;type=\"application/soap+xml\"\r\n\r\n<s:Envelope
+        xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"><s:Header><a:Action
+        s:mustUnderstand=\"1\">http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukajResponse</a:Action><a:RelatesTo>urn:uuid:96bbccb2-84a6-4e09-a1d8-7a953c860f73</a:RelatesTo></s:Header><s:Body><DaneSzukajResponse
+        xmlns=\"http://CIS/BIR/PUBL/2014/07\"><DaneSzukajResult>&lt;root&gt;&#xD;\n
+        \ &lt;dane&gt;&#xD;\n    &lt;Regon&gt;970442445&lt;/Regon&gt;&#xD;\n    &lt;RegonLink&gt;&amp;lt;a
+        href='javascript:danePobierzPelnyRaport(\"97044244500000\",\"DaneRaportFizycznaPubl\",
+        3);'&amp;gt;970442445&amp;lt;/a&amp;gt;&lt;/RegonLink&gt;&#xD;\n    &lt;Nazwa&gt;KOMORNIK
+        S\u0104DOWY PRZY S\u0104DZIE REJONOWYM W \u017BAGANIU  ZBIGNIEW XXXXXXXX&lt;/Nazwa&gt;&#xD;\n
+        \   &lt;Wojewodztwo&gt;LUBUSKIE&lt;/Wojewodztwo&gt;&#xD;\n    &lt;Powiat&gt;\u017Caga\u0144ski&lt;/Powiat&gt;&#xD;\n
+        \   &lt;Gmina&gt;\u017Baga\u0144&lt;/Gmina&gt;&#xD;\n    &lt;Miejscowosc&gt;\u017Baga\u0144&lt;/Miejscowosc&gt;&#xD;\n
+        \   &lt;KodPocztowy&gt;68-100&lt;/KodPocztowy&gt;&#xD;\n    &lt;Ulica&gt;ul.
+        Test-Wilcza&lt;/Ulica&gt;&#xD;\n    &lt;Typ&gt;F&lt;/Typ&gt;&#xD;\n    &lt;SilosID&gt;3&lt;/SilosID&gt;&#xD;\n
+        \ &lt;/dane&gt;&#xD;\n&lt;/root&gt;</DaneSzukajResult></DaneSzukajResponse></s:Body></s:Envelope>\r\n--uuid:3e2fc6a1-25ce-4dcc-9875-3bb93963280a+id=7407--\r\n"}
+    headers:
+      cache-control: [private]
+      connection: [Keep-Alive]
+      content-length: ['1503']
+      content-type: ['multipart/related; type="application/xop+xml";start="<http://tempuri.org/0>";boundary="uuid:3e2fc6a1-25ce-4dcc-9875-3bb93963280a+id=7407";start-info="application/soap+xml"']
+      date: ['Fri, 14 Jul 2017 16:46:00 GMT']
+      mime-version: ['1.0']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [2.0.50727]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode "<?xml version='1.0' encoding='utf-8'?>\n<soap-env:Envelope
+      xmlns:soap-env=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap-env:Header
+      xmlns:wsa=\"http://www.w3.org/2005/08/addressing\">\n    <wsa:Action>http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport</wsa:Action>\n
+      \   <wsa:MessageID>urn:uuid:06d8609a-8dd2-4077-b457-0ed543511795</wsa:MessageID>\n
+      \   <wsa:To>https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc</wsa:To>\n
+      \ </soap-env:Header>\n  <soap-env:Body>\n    <ns0:DanePobierzPelnyRaport xmlns:ns0=\"http://CIS/BIR/PUBL/2014/07\">\n
+      \     <ns0:pRegon>970442445</ns0:pRegon>\n      <ns0:pNazwaRaportu>PublDaneRaportDzialalnoscFizycznejPozostala</ns0:pNazwaRaportu>\n
+      \   </ns0:DanePobierzPelnyRaport>\n  </soap-env:Body>\n</soap-env:Envelope>\n"
+    headers:
+      Content-Length: ['772']
+      Content-Type: ['application/soap+xml; charset=utf-8; action="http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport"']
+      SOAPAction: ['"http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport"']
+      User-Agent: [Zeep/1.6.0 (www.python-zeep.org)]
+      sid: [bz6v992t87959bh83t89]
+    method: POST
+    uri: https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
+  response:
+    body: {string: "\r\n--uuid:3e2fc6a1-25ce-4dcc-9875-3bb93963280a+id=7408\r\nContent-ID:
+        <http://tempuri.org/0>\r\nContent-Transfer-Encoding: 8bit\r\nContent-Type:
+        application/xop+xml;charset=utf-8;type=\"application/soap+xml\"\r\n\r\n<s:Envelope
+        xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"><s:Header><a:Action
+        s:mustUnderstand=\"1\">http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaportResponse</a:Action><a:RelatesTo>urn:uuid:06d8609a-8dd2-4077-b457-0ed543511795</a:RelatesTo></s:Header><s:Body><DanePobierzPelnyRaportResponse
+        xmlns=\"http://CIS/BIR/PUBL/2014/07\"><DanePobierzPelnyRaportResult>&lt;root&gt;&#xD;\n
+        \ &lt;dane&gt;&#xD;\n    &lt;fiz_regon9&gt;970442445&lt;/fiz_regon9&gt;&#xD;\n
+        \   &lt;fiz_nazwa&gt;KOMORNIK S\u0104DOWY PRZY S\u0104DZIE REJONOWYM W \u017BAGANIU
+        \ ZBIGNIEW XXXXXXXX&lt;/fiz_nazwa&gt;&#xD;\n    &lt;fiz_nazwaSkrocona /&gt;&#xD;\n
+        \   &lt;fiz_dataPowstania&gt;1988-01-01&lt;/fiz_dataPowstania&gt;&#xD;\n    &lt;fiz_dataRozpoczeciaDzialalnosci&gt;1988-01-01&lt;/fiz_dataRozpoczeciaDzialalnosci&gt;&#xD;\n
+        \   &lt;fiz_dataWpisuDoREGONDzialalnosci /&gt;&#xD;\n    &lt;fiz_dataZawieszeniaDzialalnosci
+        /&gt;&#xD;\n    &lt;fiz_dataWznowieniaDzialalnosci /&gt;&#xD;\n    &lt;fiz_dataZaistnieniaZmianyDzialalnosci&gt;2008-02-14&lt;/fiz_dataZaistnieniaZmianyDzialalnosci&gt;&#xD;\n
+        \   &lt;fiz_dataZakonczeniaDzialalnosci /&gt;&#xD;\n    &lt;fiz_dataSkresleniazRegonDzialalnosci
+        /&gt;&#xD;\n    &lt;fiz_adSiedzKraj_Symbol /&gt;&#xD;\n    &lt;fiz_adSiedzWojewodztwo_Symbol&gt;08&lt;/fiz_adSiedzWojewodztwo_Symbol&gt;&#xD;\n
+        \   &lt;fiz_adSiedzPowiat_Symbol&gt;10&lt;/fiz_adSiedzPowiat_Symbol&gt;&#xD;\n
+        \   &lt;fiz_adSiedzGmina_Symbol&gt;021&lt;/fiz_adSiedzGmina_Symbol&gt;&#xD;\n
+        \   &lt;fiz_adSiedzKodPocztowy&gt;68100&lt;/fiz_adSiedzKodPocztowy&gt;&#xD;\n
+        \   &lt;fiz_adSiedzMiejscowoscPoczty_Symbol&gt;0988661&lt;/fiz_adSiedzMiejscowoscPoczty_Symbol&gt;&#xD;\n
+        \   &lt;fiz_adSiedzMiejscowosc_Symbol&gt;0988661&lt;/fiz_adSiedzMiejscowosc_Symbol&gt;&#xD;\n
+        \   &lt;fiz_adSiedzUlica_Symbol&gt;24261&lt;/fiz_adSiedzUlica_Symbol&gt;&#xD;\n
+        \   &lt;fiz_adSiedzNumerNieruchomosci&gt;1         &lt;/fiz_adSiedzNumerNieruchomosci&gt;&#xD;\n
+        \   &lt;fiz_adSiedzNumerLokalu /&gt;&#xD;\n    &lt;fiz_adSiedzNietypoweMiejsceLokalizacji
+        /&gt;&#xD;\n    &lt;fiz_numerTelefonu /&gt;&#xD;\n    &lt;fiz_numerWewnetrznyTelefonu
+        /&gt;&#xD;\n    &lt;fiz_numerFaksu&gt;0684775175&lt;/fiz_numerFaksu&gt;&#xD;\n
+        \   &lt;fiz_adresEmail /&gt;&#xD;\n    &lt;fiz_adresStronyinternetowej /&gt;&#xD;\n
+        \   &lt;fiz_adresEmail2 /&gt;&#xD;\n    &lt;fiz_adSiedzKraj_Nazwa /&gt;&#xD;\n
+        \   &lt;fiz_adSiedzWojewodztwo_Nazwa&gt;LUBUSKIE&lt;/fiz_adSiedzWojewodztwo_Nazwa&gt;&#xD;\n
+        \   &lt;fiz_adSiedzPowiat_Nazwa&gt;\u017Caga\u0144ski&lt;/fiz_adSiedzPowiat_Nazwa&gt;&#xD;\n
+        \   &lt;fiz_adSiedzGmina_Nazwa&gt;\u017Baga\u0144&lt;/fiz_adSiedzGmina_Nazwa&gt;&#xD;\n
+        \   &lt;fiz_adSiedzMiejscowosc_Nazwa&gt;\u017Baga\u0144&lt;/fiz_adSiedzMiejscowosc_Nazwa&gt;&#xD;\n
+        \   &lt;fiz_adSiedzMiejscowoscPoczty_Nazwa&gt;\u017Baga\u0144&lt;/fiz_adSiedzMiejscowoscPoczty_Nazwa&gt;&#xD;\n
+        \   &lt;fiz_adSiedzUlica_Nazwa&gt;ul. Test-Wilcza&lt;/fiz_adSiedzUlica_Nazwa&gt;&#xD;\n
+        \   &lt;fizP_dataWpisuDoRejestruEwidencji /&gt;&#xD;\n    &lt;fizP_numerwRejestrzeEwidencji
+        /&gt;&#xD;\n    &lt;fizP_OrganRejestrowy_Symbol /&gt;&#xD;\n    &lt;fizP_OrganRejestrowy_Nazwa
+        /&gt;&#xD;\n    &lt;fizP_RodzajRejestru_Symbol&gt;099&lt;/fizP_RodzajRejestru_Symbol&gt;&#xD;\n
+        \   &lt;fizP_RodzajRejestru_Nazwa&gt;PODMIOTY NIE PODLEGAJ\u0104CE WPISOM
+        DO REJESTRU LUB EWIDENCJI&lt;/fizP_RodzajRejestru_Nazwa&gt;&#xD;\n  &lt;/dane&gt;&#xD;\n&lt;/root&gt;</DanePobierzPelnyRaportResult></DanePobierzPelnyRaportResponse></s:Body></s:Envelope>\r\n--uuid:3e2fc6a1-25ce-4dcc-9875-3bb93963280a+id=7408--\r\n"}
+    headers:
+      cache-control: [private]
+      connection: [Keep-Alive]
+      content-length: ['3668']
+      content-type: ['multipart/related; type="application/xop+xml";start="<http://tempuri.org/0>";boundary="uuid:3e2fc6a1-25ce-4dcc-9875-3bb93963280a+id=7408";start-info="application/soap+xml"']
+      date: ['Fri, 14 Jul 2017 16:46:00 GMT']
+      mime-version: ['1.0']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [2.0.50727]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+version: 1

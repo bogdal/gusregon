@@ -71,3 +71,23 @@ def test_get_company_type_f_details(client, kwargs):
     assert data['adsiedznumernieruchomosci'] == '24'
     assert data['adsiedzkodpocztowy'] == '50502'
     assert data['adsiedzmiejscowosc_nazwa'] == 'Wrocław'
+
+
+@vcr.use_cassette
+def test_get_company_type_f_other_details(client):
+    data = client.search(regon='970442445')
+    assert 'PRZY SĄDZIE REJONOWYM W ŻAGANIU' in data['nazwa']
+    assert data['adsiedzulica_nazwa'] == 'ul. Test-Wilcza'
+    assert data['adsiedznumernieruchomosci'] == '1'
+    assert data['adsiedzkodpocztowy'] == '68100'
+    assert data['adsiedzmiejscowosc_nazwa'] == 'Żagań'
+
+
+@vcr.use_cassette
+def test_get_company_type_lp_details(client):
+    data = client.search(regon='01034470800689')
+    assert 'AGENCJA NIERUCHOMOŚCI' in data['nazwa']
+    assert data['adsiedzulica_nazwa'] == 'ul. Test-Wilcza'
+    assert data['adsiedznumernieruchomosci'] == '7'
+    assert data['adsiedzkodpocztowy'] == '35001'
+    assert data['adsiedzmiejscowosc_nazwa'] == 'Rzeszów'
