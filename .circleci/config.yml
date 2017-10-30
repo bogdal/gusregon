@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: alpine:3.6
+    steps:
+      - run: apk add --no-cache --no-progress gcc git libxml2-dev libxslt-dev musl-dev python2-dev python3-dev
+      - run: pip3 install codecov tox
+      - checkout
+      - run: tox -- -x tests --cov
+      - run: codecov
