@@ -1,28 +1,25 @@
 interactions:
 - request:
-    body: !!python/unicode <?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope
-      xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope" xmlns:wsa="http://www.w3.org/2005/08/addressing"
-      xmlns:ns2="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns:ns0="http://CIS/BIR/PUBL/2014/07" xmlns:ns1="http://CIS/BIR/PUBL/2014/07/DataContract"><SOAP-ENV:Header><wsa:To>https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc</wsa:To><wsa:Action>http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj</wsa:Action></SOAP-ENV:Header><ns2:Body><ns0:DaneSzukaj><ns0:pParametryWyszukiwania><ns1:Nip>8991051697</ns1:Nip></ns0:pParametryWyszukiwania></ns0:DaneSzukaj></ns2:Body></SOAP-ENV:Envelope>
+    body: !!python/unicode '<?xml version=''1.0'' encoding=''utf-8''?>
+
+      <soap-env:Envelope xmlns:soap-env="http://www.w3.org/2003/05/soap-envelope"><soap-env:Header
+      xmlns:wsa="http://www.w3.org/2005/08/addressing"><wsa:Action>http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj</wsa:Action><wsa:MessageID>urn:uuid:8c3ba69c-8f0b-4a16-af79-befba3a67e5e</wsa:MessageID><wsa:To>https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc</wsa:To></soap-env:Header><soap-env:Body><ns0:DaneSzukaj
+      xmlns:ns0="http://CIS/BIR/PUBL/2014/07"><ns0:pParametryWyszukiwania><ns1:Nip
+      xmlns:ns1="http://CIS/BIR/PUBL/2014/07/DataContract">8991051697</ns1:Nip></ns0:pParametryWyszukiwania></ns0:DaneSzukaj></soap-env:Body></soap-env:Envelope>'
     headers:
-      Connection: [close]
-      Content-Length: ['725']
-      Content-Type: [application/soap+xml; charset=utf-8]
-      Host: [wyszukiwarkaregontest.stat.gov.pl]
-      Sid:
-      - !!python/object/new:suds.sax.text.Text
-        args: [!!python/unicode d2hh5tch3p4z592927r2]
-        state: {escaped: false, lang: null}
-      Soapaction: ['"http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj"']
-      User-Agent: [Python-urllib/2.7]
+      Content-Length: ['706']
+      Content-Type: ['application/soap+xml; charset=utf-8; action="http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj"']
+      SOAPAction: ['"http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj"']
+      User-Agent: [gusregon/1.1.1]
+      sid: [h99kd6f2pd342455nu29]
     method: POST
     uri: https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
   response:
-    body: {string: "\r\n--uuid:66ac9201-4182-497f-b6a1-37ea3398d21a+id=4568\r\nContent-ID:
+    body: {string: "\r\n--uuid:3bb68645-241f-4cf0-9405-45e05189abef+id=17568\r\nContent-ID:
         <http://tempuri.org/0>\r\nContent-Transfer-Encoding: 8bit\r\nContent-Type:
         application/xop+xml;charset=utf-8;type=\"application/soap+xml\"\r\n\r\n<s:Envelope
         xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"><s:Header><a:Action
-        s:mustUnderstand=\"1\">http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukajResponse</a:Action></s:Header><s:Body><DaneSzukajResponse
+        s:mustUnderstand=\"1\">http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukajResponse</a:Action><a:RelatesTo>urn:uuid:8c3ba69c-8f0b-4a16-af79-befba3a67e5e</a:RelatesTo></s:Header><s:Body><DaneSzukajResponse
         xmlns=\"http://CIS/BIR/PUBL/2014/07\"><DaneSzukajResult>&lt;root&gt;&#xD;\n
         \ &lt;dane&gt;&#xD;\n    &lt;Regon&gt;022225213&lt;/Regon&gt;&#xD;\n    &lt;RegonLink&gt;&amp;lt;a
         href='javascript:danePobierzPelnyRaport(\"02222521300000\",\"DaneRaportFizycznaPubl\",
@@ -32,42 +29,38 @@ interactions:
         Wroc\u0142aw&lt;/Powiat&gt;&#xD;\n    &lt;Gmina&gt;Wroc\u0142aw-Krzyki&lt;/Gmina&gt;&#xD;\n
         \   &lt;Miejscowosc&gt;Wroc\u0142aw&lt;/Miejscowosc&gt;&#xD;\n    &lt;KodPocztowy&gt;50-502&lt;/KodPocztowy&gt;&#xD;\n
         \   &lt;Ulica&gt;ul. Test-Krucza&lt;/Ulica&gt;&#xD;\n    &lt;Typ&gt;F&lt;/Typ&gt;&#xD;\n
-        \   &lt;SilosID&gt;1&lt;/SilosID&gt;&#xD;\n  &lt;/dane&gt;&#xD;\n&lt;/root&gt;</DaneSzukajResult></DaneSzukajResponse></s:Body></s:Envelope>\r\n--uuid:66ac9201-4182-497f-b6a1-37ea3398d21a+id=4568--\r\n"}
+        \   &lt;SilosID&gt;1&lt;/SilosID&gt;&#xD;\n  &lt;/dane&gt;&#xD;\n&lt;/root&gt;</DaneSzukajResult></DaneSzukajResponse></s:Body></s:Envelope>\r\n--uuid:3bb68645-241f-4cf0-9405-45e05189abef+id=17568--\r\n"}
     headers:
       cache-control: [private]
-      connection: [close]
-      content-length: ['1443']
-      content-type: ['multipart/related; type="application/xop+xml";start="<http://tempuri.org/0>";boundary="uuid:66ac9201-4182-497f-b6a1-37ea3398d21a+id=4568";start-info="application/soap+xml"']
-      date: ['Mon, 28 Nov 2016 18:36:52 GMT']
+      connection: [Keep-Alive]
+      content-length: ['1517']
+      content-type: ['multipart/related; type="application/xop+xml";start="<http://tempuri.org/0>";boundary="uuid:3bb68645-241f-4cf0-9405-45e05189abef+id=17568";start-info="application/soap+xml"']
+      date: ['Tue, 14 Nov 2017 22:08:20 GMT']
       mime-version: ['1.0']
       server: [Microsoft-IIS/7.5]
       x-aspnet-version: [2.0.50727]
       x-powered-by: [ASP.NET]
     status: {code: 200, message: OK}
 - request:
-    body: !!python/unicode <?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsa="http://www.w3.org/2005/08/addressing"
-      xmlns:ns1="http://www.w3.org/2003/05/soap-envelope" xmlns:ns0="http://CIS/BIR/PUBL/2014/07"
-      xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"><SOAP-ENV:Header><wsa:To>https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc</wsa:To><wsa:Action>http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport</wsa:Action></SOAP-ENV:Header><ns1:Body><ns0:DanePobierzPelnyRaport><ns0:pRegon>022225213</ns0:pRegon><ns0:pNazwaRaportu>PublDaneRaportDzialalnoscFizycznejCeidg</ns0:pNazwaRaportu></ns0:DanePobierzPelnyRaport></ns1:Body></SOAP-ENV:Envelope>
+    body: !!python/unicode '<?xml version=''1.0'' encoding=''utf-8''?>
+
+      <soap-env:Envelope xmlns:soap-env="http://www.w3.org/2003/05/soap-envelope"><soap-env:Header
+      xmlns:wsa="http://www.w3.org/2005/08/addressing"><wsa:Action>http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport</wsa:Action><wsa:MessageID>urn:uuid:91f134b1-ca7d-46f1-b52e-f2c70c77856b</wsa:MessageID><wsa:To>https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc</wsa:To></soap-env:Header><soap-env:Body><ns0:DanePobierzPelnyRaport
+      xmlns:ns0="http://CIS/BIR/PUBL/2014/07"><ns0:pRegon>022225213</ns0:pRegon><ns0:pNazwaRaportu>PublDaneRaportDzialalnoscFizycznejCeidg</ns0:pNazwaRaportu></ns0:DanePobierzPelnyRaport></soap-env:Body></soap-env:Envelope>'
     headers:
-      Connection: [close]
-      Content-Length: ['734']
-      Content-Type: [application/soap+xml; charset=utf-8]
-      Host: [wyszukiwarkaregontest.stat.gov.pl]
-      Sid:
-      - !!python/object/new:suds.sax.text.Text
-        args: [!!python/unicode d2hh5tch3p4z592927r2]
-        state: {escaped: false, lang: null}
-      Soapaction: ['"http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport"']
-      User-Agent: [Python-urllib/2.7]
+      Content-Length: ['715']
+      Content-Type: ['application/soap+xml; charset=utf-8; action="http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport"']
+      SOAPAction: ['"http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport"']
+      User-Agent: [gusregon/1.1.1]
+      sid: [h99kd6f2pd342455nu29]
     method: POST
     uri: https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
   response:
-    body: {string: "\r\n--uuid:66ac9201-4182-497f-b6a1-37ea3398d21a+id=4569\r\nContent-ID:
+    body: {string: "\r\n--uuid:3bb68645-241f-4cf0-9405-45e05189abef+id=17569\r\nContent-ID:
         <http://tempuri.org/0>\r\nContent-Transfer-Encoding: 8bit\r\nContent-Type:
         application/xop+xml;charset=utf-8;type=\"application/soap+xml\"\r\n\r\n<s:Envelope
         xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"><s:Header><a:Action
-        s:mustUnderstand=\"1\">http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaportResponse</a:Action></s:Header><s:Body><DanePobierzPelnyRaportResponse
+        s:mustUnderstand=\"1\">http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaportResponse</a:Action><a:RelatesTo>urn:uuid:91f134b1-ca7d-46f1-b52e-f2c70c77856b</a:RelatesTo></s:Header><s:Body><DanePobierzPelnyRaportResponse
         xmlns=\"http://CIS/BIR/PUBL/2014/07\"><DanePobierzPelnyRaportResult>&lt;root&gt;&#xD;\n
         \ &lt;dane&gt;&#xD;\n    &lt;fiz_regon9&gt;022225213&lt;/fiz_regon9&gt;&#xD;\n
         \   &lt;fiz_nazwa&gt;RYSZARD XXXXXXXX \"ZAK\u0141AD US\u0141UGOWO-HANDLOWY
@@ -105,13 +98,13 @@ interactions:
         GOSPODARCZEJ&lt;/fizC_RodzajRejestru_Nazwa&gt;&#xD;\n    &lt;fizC_numerTelefonu
         /&gt;&#xD;\n    &lt;fizC_numerWewnetrznyTelefonu /&gt;&#xD;\n    &lt;fizC_numerFaksu
         /&gt;&#xD;\n    &lt;fizC_adresEmail /&gt;&#xD;\n    &lt;fizC_adresStronyInternetowej
-        /&gt;&#xD;\n  &lt;/dane&gt;&#xD;\n&lt;/root&gt;</DanePobierzPelnyRaportResult></DanePobierzPelnyRaportResponse></s:Body></s:Envelope>\r\n--uuid:66ac9201-4182-497f-b6a1-37ea3398d21a+id=4569--\r\n"}
+        /&gt;&#xD;\n  &lt;/dane&gt;&#xD;\n&lt;/root&gt;</DanePobierzPelnyRaportResult></DanePobierzPelnyRaportResponse></s:Body></s:Envelope>\r\n--uuid:3bb68645-241f-4cf0-9405-45e05189abef+id=17569--\r\n"}
     headers:
       cache-control: [private]
-      connection: [close]
-      content-length: ['4063']
-      content-type: ['multipart/related; type="application/xop+xml";start="<http://tempuri.org/0>";boundary="uuid:66ac9201-4182-497f-b6a1-37ea3398d21a+id=4569";start-info="application/soap+xml"']
-      date: ['Mon, 28 Nov 2016 18:36:54 GMT']
+      connection: [Keep-Alive]
+      content-length: ['4137']
+      content-type: ['multipart/related; type="application/xop+xml";start="<http://tempuri.org/0>";boundary="uuid:3bb68645-241f-4cf0-9405-45e05189abef+id=17569";start-info="application/soap+xml"']
+      date: ['Tue, 14 Nov 2017 22:08:20 GMT']
       mime-version: ['1.0']
       server: [Microsoft-IIS/7.5]
       x-aspnet-version: [2.0.50727]

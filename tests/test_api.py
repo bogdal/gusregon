@@ -50,6 +50,15 @@ def test_get_company_type_f_address(client, kwargs):
     assert data['city'] == 'Wrocław'
 
 
+@vcr.use_cassette
+def test_get_company_type_f_krupgn_address(client):
+    data = client.get_address(nip='5881018622')
+    assert 'PRZEDSIĘBIORSTWO BUDOWLANE' in data['name']
+    assert data['street_address'] == 'ul. Test-Krucza 24 C'
+    assert data['postal_code'] == '84-200'
+    assert data['city'] == 'Wejherowo'
+
+
 @pytest.mark.parametrize('kwargs', [{'nip': '5170359458'}, {'regon': '180853177'}])
 @vcr.use_cassette
 def test_get_company_type_p_details(client, kwargs):

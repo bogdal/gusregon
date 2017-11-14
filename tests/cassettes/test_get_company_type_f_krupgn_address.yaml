@@ -1,0 +1,107 @@
+interactions:
+- request:
+    body: !!python/unicode "<?xml version='1.0' encoding='utf-8'?>\n<soap-env:Envelope
+      xmlns:soap-env=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap-env:Header
+      xmlns:wsa=\"http://www.w3.org/2005/08/addressing\">\n    <wsa:Action>http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj</wsa:Action>\n
+      \   <wsa:MessageID>urn:uuid:ee38baf8-0e1d-4220-b1c0-a29ebb74f94e</wsa:MessageID>\n
+      \   <wsa:To>https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc</wsa:To>\n
+      \ </soap-env:Header>\n  <soap-env:Body>\n    <ns0:DaneSzukaj xmlns:ns0=\"http://CIS/BIR/PUBL/2014/07\">\n
+      \     <ns0:pParametryWyszukiwania>\n        <ns1:Nip xmlns:ns1=\"http://CIS/BIR/PUBL/2014/07/DataContract\">5881018622</ns1:Nip>\n
+      \     </ns0:pParametryWyszukiwania>\n    </ns0:DaneSzukaj>\n  </soap-env:Body>\n</soap-env:Envelope>\n"
+    headers:
+      Content-Length: ['768']
+      Content-Type: ['application/soap+xml; charset=utf-8; action="http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj"']
+      SOAPAction: ['"http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj"']
+      User-Agent: [gusregon/1.1.1]
+      sid: [cr4s2eess89ys446ut67]
+    method: POST
+    uri: https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
+  response:
+    body: {string: "\r\n--uuid:3bb68645-241f-4cf0-9405-45e05189abef+id=17508\r\nContent-ID:
+        <http://tempuri.org/0>\r\nContent-Transfer-Encoding: 8bit\r\nContent-Type:
+        application/xop+xml;charset=utf-8;type=\"application/soap+xml\"\r\n\r\n<s:Envelope
+        xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"><s:Header><a:Action
+        s:mustUnderstand=\"1\">http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukajResponse</a:Action><a:RelatesTo>urn:uuid:ee38baf8-0e1d-4220-b1c0-a29ebb74f94e</a:RelatesTo></s:Header><s:Body><DaneSzukajResponse
+        xmlns=\"http://CIS/BIR/PUBL/2014/07\"><DaneSzukajResult>&lt;root&gt;&#xD;\n
+        \ &lt;dane&gt;&#xD;\n    &lt;Regon&gt;191049200&lt;/Regon&gt;&#xD;\n    &lt;RegonLink&gt;&amp;lt;a
+        href='javascript:danePobierzPelnyRaport(\"19104920000000\",\"DaneRaportFizycznaPubl\",
+        4);'&amp;gt;191049200&amp;lt;/a&amp;gt;&lt;/RegonLink&gt;&#xD;\n    &lt;Nazwa&gt;PRZEDSI\u0118BIORSTWO
+        BUDOWLANE \"PRUSBUD\" XXXXXXXX WIES\u0141AW&lt;/Nazwa&gt;&#xD;\n    &lt;Wojewodztwo&gt;POMORSKIE&lt;/Wojewodztwo&gt;&#xD;\n
+        \   &lt;Powiat&gt;wejherowski&lt;/Powiat&gt;&#xD;\n    &lt;Gmina&gt;Wejherowo&lt;/Gmina&gt;&#xD;\n
+        \   &lt;Miejscowosc&gt;Wejherowo&lt;/Miejscowosc&gt;&#xD;\n    &lt;KodPocztowy&gt;84-200&lt;/KodPocztowy&gt;&#xD;\n
+        \   &lt;Ulica&gt;ul. Test-Krucza&lt;/Ulica&gt;&#xD;\n    &lt;Typ&gt;F&lt;/Typ&gt;&#xD;\n
+        \   &lt;SilosID&gt;4&lt;/SilosID&gt;&#xD;\n  &lt;/dane&gt;&#xD;\n&lt;/root&gt;</DaneSzukajResult></DaneSzukajResponse></s:Body></s:Envelope>\r\n--uuid:3bb68645-241f-4cf0-9405-45e05189abef+id=17508--\r\n"}
+    headers:
+      cache-control: [private]
+      connection: [Keep-Alive]
+      content-length: ['1497']
+      content-type: ['multipart/related; type="application/xop+xml";start="<http://tempuri.org/0>";boundary="uuid:3bb68645-241f-4cf0-9405-45e05189abef+id=17508";start-info="application/soap+xml"']
+      date: ['Tue, 14 Nov 2017 21:51:40 GMT']
+      mime-version: ['1.0']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [2.0.50727]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode "<?xml version='1.0' encoding='utf-8'?>\n<soap-env:Envelope
+      xmlns:soap-env=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap-env:Header
+      xmlns:wsa=\"http://www.w3.org/2005/08/addressing\">\n    <wsa:Action>http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport</wsa:Action>\n
+      \   <wsa:MessageID>urn:uuid:5d571838-a919-43bd-afa9-c6e09dffc63c</wsa:MessageID>\n
+      \   <wsa:To>https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc</wsa:To>\n
+      \ </soap-env:Header>\n  <soap-env:Body>\n    <ns0:DanePobierzPelnyRaport xmlns:ns0=\"http://CIS/BIR/PUBL/2014/07\">\n
+      \     <ns0:pRegon>191049200</ns0:pRegon>\n      <ns0:pNazwaRaportu>PublDaneRaportDzialalnoscFizycznejWKrupgn</ns0:pNazwaRaportu>\n
+      \   </ns0:DanePobierzPelnyRaport>\n  </soap-env:Body>\n</soap-env:Envelope>\n"
+    headers:
+      Content-Length: ['770']
+      Content-Type: ['application/soap+xml; charset=utf-8; action="http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport"']
+      SOAPAction: ['"http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport"']
+      User-Agent: [gusregon/1.1.1]
+      sid: [cr4s2eess89ys446ut67]
+    method: POST
+    uri: https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
+  response:
+    body: {string: "\r\n--uuid:3bb68645-241f-4cf0-9405-45e05189abef+id=17509\r\nContent-ID:
+        <http://tempuri.org/0>\r\nContent-Transfer-Encoding: 8bit\r\nContent-Type:
+        application/xop+xml;charset=utf-8;type=\"application/soap+xml\"\r\n\r\n<s:Envelope
+        xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"><s:Header><a:Action
+        s:mustUnderstand=\"1\">http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaportResponse</a:Action><a:RelatesTo>urn:uuid:5d571838-a919-43bd-afa9-c6e09dffc63c</a:RelatesTo></s:Header><s:Body><DanePobierzPelnyRaportResponse
+        xmlns=\"http://CIS/BIR/PUBL/2014/07\"><DanePobierzPelnyRaportResult>&lt;root&gt;&#xD;\n
+        \ &lt;dane&gt;&#xD;\n    &lt;fiz_regon9&gt;191049200&lt;/fiz_regon9&gt;&#xD;\n
+        \   &lt;fiz_nazwa&gt;PRZEDSI\u0118BIORSTWO BUDOWLANE \"PRUSBUD\" XXXXXXXX
+        WIES\u0141AW&lt;/fiz_nazwa&gt;&#xD;\n    &lt;fiz_nazwaSkrocona /&gt;&#xD;\n
+        \   &lt;fiz_dataPowstania /&gt;&#xD;\n    &lt;fiz_dataRozpoczeciaDzialalnosci
+        /&gt;&#xD;\n    &lt;fiz_dataWpisuDoREGONDzialalnosci /&gt;&#xD;\n    &lt;fiz_dataZawieszeniaDzialalnosci
+        /&gt;&#xD;\n    &lt;fiz_dataWznowieniaDzialalnosci /&gt;&#xD;\n    &lt;fiz_dataZaistnieniaZmianyDzialalnosci
+        /&gt;&#xD;\n    &lt;fiz_dataZakonczeniaDzialalnosci&gt;2011-02-15&lt;/fiz_dataZakonczeniaDzialalnosci&gt;&#xD;\n
+        \   &lt;fiz_dataSkresleniazRegonDzialalnosci /&gt;&#xD;\n    &lt;fiz_adSiedzKraj_Symbol
+        /&gt;&#xD;\n    &lt;fiz_adSiedzWojewodztwo_Symbol&gt;22&lt;/fiz_adSiedzWojewodztwo_Symbol&gt;&#xD;\n
+        \   &lt;fiz_adSiedzPowiat_Symbol&gt;15&lt;/fiz_adSiedzPowiat_Symbol&gt;&#xD;\n
+        \   &lt;fiz_adSiedzGmina_Symbol&gt;031&lt;/fiz_adSiedzGmina_Symbol&gt;&#xD;\n
+        \   &lt;fiz_adSiedzKodPocztowy&gt;84200&lt;/fiz_adSiedzKodPocztowy&gt;&#xD;\n
+        \   &lt;fiz_adSiedzMiejscowoscPoczty_Symbol&gt;0934984&lt;/fiz_adSiedzMiejscowoscPoczty_Symbol&gt;&#xD;\n
+        \   &lt;fiz_adSiedzMiejscowosc_Symbol&gt;0934984&lt;/fiz_adSiedzMiejscowosc_Symbol&gt;&#xD;\n
+        \   &lt;fiz_adSiedzUlica_Symbol&gt;10013&lt;/fiz_adSiedzUlica_Symbol&gt;&#xD;\n
+        \   &lt;fiz_adSiedzNumerNieruchomosci&gt;24 C&lt;/fiz_adSiedzNumerNieruchomosci&gt;&#xD;\n
+        \   &lt;fiz_adSiedzNumerLokalu /&gt;&#xD;\n    &lt;fiz_adSiedzNietypoweMiejsceLokalizacji
+        /&gt;&#xD;\n    &lt;fiz_numerTelefonu /&gt;&#xD;\n    &lt;fiz_numerWewnetrznyTelefonu
+        /&gt;&#xD;\n    &lt;fiz_numerFaksu /&gt;&#xD;\n    &lt;fiz_adresEmail /&gt;&#xD;\n
+        \   &lt;fiz_adresStronyinternetowej /&gt;&#xD;\n    &lt;fiz_adresEmail2 /&gt;&#xD;\n
+        \   &lt;fiz_adSiedzKraj_Nazwa /&gt;&#xD;\n    &lt;fiz_adSiedzWojewodztwo_Nazwa&gt;POMORSKIE&lt;/fiz_adSiedzWojewodztwo_Nazwa&gt;&#xD;\n
+        \   &lt;fiz_adSiedzPowiat_Nazwa&gt;wejherowski&lt;/fiz_adSiedzPowiat_Nazwa&gt;&#xD;\n
+        \   &lt;fiz_adSiedzGmina_Nazwa&gt;Wejherowo&lt;/fiz_adSiedzGmina_Nazwa&gt;&#xD;\n
+        \   &lt;fiz_adSiedzMiejscowosc_Nazwa&gt;Wejherowo&lt;/fiz_adSiedzMiejscowosc_Nazwa&gt;&#xD;\n
+        \   &lt;fiz_adSiedzMiejscowoscPoczty_Nazwa&gt;Wejherowo&lt;/fiz_adSiedzMiejscowoscPoczty_Nazwa&gt;&#xD;\n
+        \   &lt;fiz_adSiedzUlica_Nazwa&gt;ul. Test-Krucza&lt;/fiz_adSiedzUlica_Nazwa&gt;&#xD;\n
+        \ &lt;/dane&gt;&#xD;\n&lt;/root&gt;</DanePobierzPelnyRaportResult></DanePobierzPelnyRaportResponse></s:Body></s:Envelope>\r\n--uuid:3bb68645-241f-4cf0-9405-45e05189abef+id=17509--\r\n"}
+    headers:
+      cache-control: [private]
+      connection: [Keep-Alive]
+      content-length: ['3127']
+      content-type: ['multipart/related; type="application/xop+xml";start="<http://tempuri.org/0>";boundary="uuid:3bb68645-241f-4cf0-9405-45e05189abef+id=17509";start-info="application/soap+xml"']
+      date: ['Tue, 14 Nov 2017 21:51:40 GMT']
+      mime-version: ['1.0']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [2.0.50727]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+version: 1

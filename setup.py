@@ -4,6 +4,8 @@ import sys
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
+exec(open("./gusregon/version.py").read())
+
 
 class PyTest(TestCommand):
     user_options = [('pytest-args=', 'a', "Arguments to pass to py.test")]
@@ -27,7 +29,7 @@ class PyTest(TestCommand):
 
 setup(
     name='gusregon',
-    version='1.1.1',
+    version=__version__,
     description='GUS REGON Internet Database Client',
     long_description=open('README.rst').read(),
     author='Adam Bogdał',
