@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup, Tag
 from requests import Session
 from zeep import Client, Transport
 
+from .version import __version__
+
 WSDL = 'https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/wsdl/UslugaBIRzewnPubl.xsd'
 ENDPOINT = 'https://wyszukiwarkaregon.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc'
 ENDPOINT_SANDBOX = 'https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc'
@@ -9,12 +11,13 @@ ENDPOINT_SANDBOX = 'https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzew
 
 class GUS(object):
     endpoint = ENDPOINT
-    headers = {'User-Agent': 'gusregon'}
+    headers = {'User-Agent': 'gusregon/%s' % __version__}
     report_type = {
         'F': {
             '1': 'PublDaneRaportDzialalnoscFizycznejCeidg',
             '2': 'PublDaneRaportDzialalnoscFizycznejRolnicza',
-            '3': 'PublDaneRaportDzialalnoscFizycznejPozostala'},
+            '3': 'PublDaneRaportDzialalnoscFizycznejPozostala',
+            '4': 'PublDaneRaportDzialalnoscFizycznejWKrupgn'},
         'LF': 'PublDaneRaportLokalnaFizycznej',
         'P': 'PublDaneRaportPrawna',
         'LP': 'PublDaneRaportLokalnaPrawnej'}
@@ -27,12 +30,11 @@ class GUS(object):
         if sandbox:
             self.api_key = api_key or 'abcde12345abcde12345'
             self.endpoint = ENDPOINT_SANDBOX
-        session = Session()
-        session.headers = self.headers
-        client = Client(WSDL, transport=Transport(session=session))
+        transport = Transport(session=Session())
+        transport.session.headers = self.headers
+        client = Client(WSDL, transport=transport)
         self.service = client.create_service('{http://tempuri.org/}e3', self.endpoint)
         self.headers.update({'sid': self._service('Zaloguj', self.api_key)})
-        client.transport.session.headers = self.headers
 
     def _service(self, action, *args, **kwargs):
         service = getattr(self.service, action)
