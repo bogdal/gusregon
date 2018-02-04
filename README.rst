@@ -26,6 +26,7 @@ Install the package via ``pip``:
 
 Usage
 -----
+Returns the business address
 
 .. code-block:: python
 
@@ -33,17 +34,53 @@ Usage
 
     gus = GUS(api_key='my_api_key')
     gus.get_address(nip='1112223344')
-    
+
+output
+
+.. code-block::
+
     {
         'name': 'REGON SYSTEMS SPÓŁKA AKCYJNA',
         'street_address': 'ul. Tęczowa 14',
         'postal_code': '35-322',
         'city': 'Rzeszów'
     }
-    
-    # returns all data from BIR1 service
+
+Returns PKD codes
+
+
+.. code-block:: python
+
+    gus.get_pkd(nip='1112223344')
+
+output
+
+.. code-block::
+
+    [
+        {
+            'code': '6201Z',
+            'name': 'DZIAŁALNOŚĆ ZWIĄZANA Z OPROGRAMOWANIEM',
+            'main': True
+        },
+        {
+            'code': '6312Z':
+            'name': 'DZIAŁALNOŚĆ PORTALI INTERNETOWYCH',
+            'main': False
+        },
+        ...
+    ]
+
+Returns all data from BIR1 service
+
+.. code-block:: python
+
     gus.search(nip='1112223344')
-    
+
+output
+
+.. code-block::
+
     {
         'adsiedzkraj_symbol': 'PL',
         'datazawieszeniadzialalnosci': '',
@@ -60,6 +97,8 @@ Usage
         'adsiedzulica_symbol': '10013',
         'adsiedzkodpocztowy': '35322',
     }
+
+
 
 Sandbox mode for testing:
 
