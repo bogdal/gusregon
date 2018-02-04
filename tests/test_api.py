@@ -100,3 +100,26 @@ def test_get_company_type_lp_details(client):
     assert data['adsiedznumernieruchomosci'] == '7'
     assert data['adsiedzkodpocztowy'] == '35001'
     assert data['adsiedzmiejscowosc_nazwa'] == 'Rzeszów'
+
+
+@pytest.mark.parametrize('kwargs', [{'nip': '5170359458'}, {'regon': '180853177'}])
+@vcr.use_cassette
+def test_get_pkd_type_p(client, kwargs):
+    items = client.get_pkd(**kwargs)
+    assert '6201Z' in {i['code'] for i in items}
+
+
+@pytest.mark.parametrize('kwargs', [{'nip': '8991051697'}, {'regon': '022225213'}])
+@vcr.use_cassette
+def test_get_pkd_type_f(client, kwargs):
+    items = client.get_pkd(**kwargs)
+    codes = {i['code']: i['main'] for i in items}
+    assert codes.get('4520Z') is True
+    assert codes.get('4532Z') is False
+
+
+@vcr.use_cassette
+def test_get_pkd_type_lp(client):
+    items = client.get_pkd(regon='01034470800689')
+    codes = {i['code']: i['main'] for i in items}
+    assert codes.get('6831Z') is True
