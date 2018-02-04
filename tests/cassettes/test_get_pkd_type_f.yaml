@@ -1,0 +1,84 @@
+interactions:
+- request:
+    body: !!python/unicode '<?xml version=''1.0'' encoding=''utf-8''?>
+
+      <soap-env:Envelope xmlns:soap-env="http://www.w3.org/2003/05/soap-envelope"><soap-env:Header
+      xmlns:wsa="http://www.w3.org/2005/08/addressing"><wsa:Action>http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj</wsa:Action><wsa:MessageID>urn:uuid:2b637bd1-6e20-43b3-91fd-5894626aec2d</wsa:MessageID><wsa:To>https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc</wsa:To></soap-env:Header><soap-env:Body><ns0:DaneSzukaj
+      xmlns:ns0="http://CIS/BIR/PUBL/2014/07"><ns0:pParametryWyszukiwania><ns1:Nip
+      xmlns:ns1="http://CIS/BIR/PUBL/2014/07/DataContract">8991051697</ns1:Nip></ns0:pParametryWyszukiwania></ns0:DaneSzukaj></soap-env:Body></soap-env:Envelope>'
+    headers:
+      Content-Length: ['706']
+      Content-Type: ['application/soap+xml; charset=utf-8; action="http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj"']
+      SOAPAction: ['"http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukaj"']
+      User-Agent: [gusregon/1.1.2]
+      sid: [mt4gbf32w2uhrg95g5z3]
+    method: POST
+    uri: https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
+  response:
+    body: {string: "\r\n--uuid:53f3eb90-4a3c-4368-8cc6-cd65d1f84871+id=1651\r\nContent-ID:
+        <http://tempuri.org/0>\r\nContent-Transfer-Encoding: 8bit\r\nContent-Type:
+        application/xop+xml;charset=utf-8;type=\"application/soap+xml\"\r\n\r\n<s:Envelope
+        xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"><s:Header><a:Action
+        s:mustUnderstand=\"1\">http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DaneSzukajResponse</a:Action><a:RelatesTo>urn:uuid:2b637bd1-6e20-43b3-91fd-5894626aec2d</a:RelatesTo></s:Header><s:Body><DaneSzukajResponse
+        xmlns=\"http://CIS/BIR/PUBL/2014/07\"><DaneSzukajResult>&lt;root&gt;&#xD;\n
+        \ &lt;dane&gt;&#xD;\n    &lt;Regon&gt;022225213&lt;/Regon&gt;&#xD;\n    &lt;RegonLink&gt;&amp;lt;a
+        href='javascript:danePobierzPelnyRaport(\"02222521300000\",\"DaneRaportFizycznaPubl\",
+        1);'&amp;gt;022225213&amp;lt;/a&amp;gt;&lt;/RegonLink&gt;&#xD;\n    &lt;Nazwa&gt;RYSZARD
+        XXXXXXXX \"ZAK\u0141AD US\u0141UGOWO-HANDLOWY MECHANIKA POJAZDOWA\"&lt;/Nazwa&gt;&#xD;\n
+        \   &lt;Wojewodztwo&gt;DOLNO\u015AL\u0104SKIE&lt;/Wojewodztwo&gt;&#xD;\n    &lt;Powiat&gt;m.
+        Wroc\u0142aw&lt;/Powiat&gt;&#xD;\n    &lt;Gmina&gt;Wroc\u0142aw-Krzyki&lt;/Gmina&gt;&#xD;\n
+        \   &lt;Miejscowosc&gt;Wroc\u0142aw&lt;/Miejscowosc&gt;&#xD;\n    &lt;KodPocztowy&gt;50-502&lt;/KodPocztowy&gt;&#xD;\n
+        \   &lt;Ulica&gt;ul. Test-Krucza&lt;/Ulica&gt;&#xD;\n    &lt;Typ&gt;F&lt;/Typ&gt;&#xD;\n
+        \   &lt;SilosID&gt;1&lt;/SilosID&gt;&#xD;\n  &lt;/dane&gt;&#xD;\n&lt;/root&gt;</DaneSzukajResult></DaneSzukajResponse></s:Body></s:Envelope>\r\n--uuid:53f3eb90-4a3c-4368-8cc6-cd65d1f84871+id=1651--\r\n"}
+    headers:
+      cache-control: [private]
+      connection: [Keep-Alive]
+      content-length: ['1515']
+      content-type: ['multipart/related; type="application/xop+xml";start="<http://tempuri.org/0>";boundary="uuid:53f3eb90-4a3c-4368-8cc6-cd65d1f84871+id=1651";start-info="application/soap+xml"']
+      date: ['Sun, 04 Feb 2018 20:56:21 GMT']
+      mime-version: ['1.0']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [2.0.50727]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode '<?xml version=''1.0'' encoding=''utf-8''?>
+
+      <soap-env:Envelope xmlns:soap-env="http://www.w3.org/2003/05/soap-envelope"><soap-env:Header
+      xmlns:wsa="http://www.w3.org/2005/08/addressing"><wsa:Action>http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport</wsa:Action><wsa:MessageID>urn:uuid:3aed18eb-6c7c-410f-bcf1-8a4dd3bce2fa</wsa:MessageID><wsa:To>https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc</wsa:To></soap-env:Header><soap-env:Body><ns0:DanePobierzPelnyRaport
+      xmlns:ns0="http://CIS/BIR/PUBL/2014/07"><ns0:pRegon>022225213</ns0:pRegon><ns0:pNazwaRaportu>PublDaneRaportDzialalnosciFizycznej</ns0:pNazwaRaportu></ns0:DanePobierzPelnyRaport></soap-env:Body></soap-env:Envelope>'
+    headers:
+      Content-Length: ['711']
+      Content-Type: ['application/soap+xml; charset=utf-8; action="http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport"']
+      SOAPAction: ['"http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaport"']
+      User-Agent: [gusregon/1.1.2]
+      sid: [mt4gbf32w2uhrg95g5z3]
+    method: POST
+    uri: https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzewnPubl.svc
+  response:
+    body: {string: "\r\n--uuid:53f3eb90-4a3c-4368-8cc6-cd65d1f84871+id=1652\r\nContent-ID:
+        <http://tempuri.org/0>\r\nContent-Transfer-Encoding: 8bit\r\nContent-Type:
+        application/xop+xml;charset=utf-8;type=\"application/soap+xml\"\r\n\r\n<s:Envelope
+        xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"><s:Header><a:Action
+        s:mustUnderstand=\"1\">http://CIS/BIR/PUBL/2014/07/IUslugaBIRzewnPubl/DanePobierzPelnyRaportResponse</a:Action><a:RelatesTo>urn:uuid:3aed18eb-6c7c-410f-bcf1-8a4dd3bce2fa</a:RelatesTo></s:Header><s:Body><DanePobierzPelnyRaportResponse
+        xmlns=\"http://CIS/BIR/PUBL/2014/07\"><DanePobierzPelnyRaportResult>&lt;root&gt;&#xD;\n
+        \ &lt;dane&gt;&#xD;\n    &lt;fiz_pkd_Kod&gt;4532Z&lt;/fiz_pkd_Kod&gt;&#xD;\n
+        \   &lt;fiz_pkd_Nazwa&gt;SPRZEDA\u017B DETALICZNA CZ\u0118\u015ACI I AKCESORI\xD3W
+        DO POJAZD\xD3W SAMOCHODOWYCH, Z WY\u0141\u0104CZENIEM MOTOCYKLI&lt;/fiz_pkd_Nazwa&gt;&#xD;\n
+        \   &lt;fiz_pkd_Przewazajace&gt;0&lt;/fiz_pkd_Przewazajace&gt;&#xD;\n    &lt;fiz_Silos_Symbol&gt;CEIDG&lt;/fiz_Silos_Symbol&gt;&#xD;\n
+        \ &lt;/dane&gt;&#xD;\n  &lt;dane&gt;&#xD;\n    &lt;fiz_pkd_Kod&gt;4520Z&lt;/fiz_pkd_Kod&gt;&#xD;\n
+        \   &lt;fiz_pkd_Nazwa&gt;KONSERWACJA I NAPRAWA POJAZD\xD3W SAMOCHODOWYCH,
+        Z WY\u0141\u0104CZENIEM MOTOCYKLI&lt;/fiz_pkd_Nazwa&gt;&#xD;\n    &lt;fiz_pkd_Przewazajace&gt;1&lt;/fiz_pkd_Przewazajace&gt;&#xD;\n
+        \   &lt;fiz_Silos_Symbol&gt;CEIDG&lt;/fiz_Silos_Symbol&gt;&#xD;\n  &lt;/dane&gt;&#xD;\n&lt;/root&gt;</DanePobierzPelnyRaportResult></DanePobierzPelnyRaportResponse></s:Body></s:Envelope>\r\n--uuid:53f3eb90-4a3c-4368-8cc6-cd65d1f84871+id=1652--\r\n"}
+    headers:
+      cache-control: [private]
+      connection: [Keep-Alive]
+      content-length: ['1533']
+      content-type: ['multipart/related; type="application/xop+xml";start="<http://tempuri.org/0>";boundary="uuid:53f3eb90-4a3c-4368-8cc6-cd65d1f84871+id=1652";start-info="application/soap+xml"']
+      date: ['Sun, 04 Feb 2018 20:56:21 GMT']
+      mime-version: ['1.0']
+      server: [Microsoft-IIS/7.5]
+      x-aspnet-version: [2.0.50727]
+      x-powered-by: [ASP.NET]
+    status: {code: 200, message: OK}
+version: 1

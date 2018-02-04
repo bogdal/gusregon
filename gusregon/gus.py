@@ -12,6 +12,9 @@ ENDPOINT_SANDBOX = 'https://wyszukiwarkaregontest.stat.gov.pl/wsBIR/UslugaBIRzew
 class GUS(object):
     endpoint = ENDPOINT
     headers = {'User-Agent': 'gusregon/%s' % __version__}
+    pkd_report_type = {
+        'F': 'PublDaneRaportDzialalnosciFizycznej',
+        'P': 'PublDaneRaportDzialalnosciPrawnej'}
     report_type = {
         'F': {
             '1': 'PublDaneRaportDzialalnoscFizycznejCeidg',
@@ -48,7 +51,7 @@ class GUS(object):
             parsed_data[name.split('_', 1)[1]] = value.strip()
         return parsed_data
 
-    def search(self, nip=None, regon=None, krs=None):
+    def _get_details(self, nip=None, regon=None, krs=None):
         if not any([nip, regon, krs]):
             raise AttributeError(
                 'At least one parameter (nip, regon, krs) is required.')
@@ -58,8 +61,10 @@ class GUS(object):
             search_params = {'Regon': regon}
         else:
             search_params = {'Krs': krs}
+        return self._service('DaneSzukaj', search_params)
 
-        details = self._service('DaneSzukaj', search_params)
+    def search(self, *args, **kwargs):
+        details = self._get_details(*args, **kwargs)
         if details is not None:
             data = BeautifulSoup(details, 'lxml')
             report_type = self.report_type.get(data.typ.get_text())
@@ -67,6 +72,27 @@ class GUS(object):
                 report_type = report_type.get(data.silosid.get_text())
             return self._remove_prefix(self._service(
                 'DanePobierzPelnyRaport', data.regon.get_text(), report_type))
+
+    def get_pkd(self, *args, **kwargs):
+        pkd = []
+        details = self._get_details(*args, **kwargs)
+        if details is not None:
+            data = BeautifulSoup(details, 'lxml')
+            report_type = self.pkd_report_type.get('F')
+            if 'P' in data.typ.get_text():
+                report_type = self.pkd_report_type.get('P')
+            report = self._service(
+                'DanePobierzPelnyRaport', data.regon.get_text(), report_type)
+            if report is not None:
+                for item in BeautifulSoup(report, 'lxml').find_all('dane'):
+                    data = {i.name.split('_', 1)[1].replace('_', '').lower(): i.get_text()
+                            for i in item.children if isinstance(i, Tag)}
+                    pkd.append({
+                        'code': data['pkdkod'],
+                        'name': data['pkdnazwa'],
+                        'main': data['pkdprzewazajace'] == '1'})
+                pkd = [dict(t) for t in set([tuple(d.items()) for d in pkd])]
+        return pkd
 
     def get_address(self, *args, **kwargs):
         details = self.search(*args, **kwargs)
