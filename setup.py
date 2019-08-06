@@ -31,7 +31,7 @@ setup(
     name='gusregon',
     version=__version__,
     description='GUS REGON Internet Database Client',
-    long_description=open('README.rst').read(),
+    long_description=open('README.rst', encoding='utf-8').read(),
     author='Adam Bogdał',
     author_email='adam@bogdal.pl',
     url='https://github.com/bogdal/gusregon',
